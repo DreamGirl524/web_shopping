@@ -1,0 +1,272 @@
+/* 声明字体图标，这里一定要注意路径的变化 */
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?tomleg');
+    src:  url('../fonts/icomoon.eot?tomleg#iefix') format('embedded-opentype'),
+      url('../fonts/icomoon.ttf?tomleg') format('truetype'),
+      url('../fonts/icomoon.woff?tomleg') format('woff'),
+      url('../fonts/icomoon.svg?tomleg#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  } 
+/* 版心 */
+.w {
+    width: 1200px;
+    margin: 0 auto;
+}
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+.style_red {
+    color:#C81623;
+}
+/* 快捷导航模块 */
+.shortcut {
+    height: 31px;
+    line-height: 31px;  /* 垂直居中 */
+    background-color: #f1f1f1;
+}
+.shortcut ul li {
+    float:left;
+}
+.shortcut .fr ul li:nth-child(even) { /* 选择所有偶数的li */
+    background-color: #666;
+    height:12px;
+    width: 1px;
+    margin:9px 15px 0; /* 上 左右 下 */
+}
+.arrow-icon::after {  /* 利用after伪元素插入字体图标 */
+    content:'\e91e';
+    font-family: 'icomoon';
+    margin-left: 6px;
+}
+/* header 头部制作 */
+.header {
+    position: relative;
+    height: 105px;
+}
+.logo {
+    position: absolute;  /*定位 子绝父相*/
+    top:25px;
+    width: 171px;
+    height: 61px;
+}
+.logo a {
+    /* 想让链接和父亲一样大，但链接是行内元素，需要转换 */
+    display:block;
+    width: 171px;
+    height: 61px;
+    background: url(../images/logo.png) no-repeat;
+    /* font-size:0; 隐藏文字 京东做法 */
+    /* 淘宝做法，先text-indent首行缩进，移动到盒子外面，然后隐藏溢出的部分 */
+    text-indent: -9999px;
+    overflow:hidden;
+}
+.search {
+    position: absolute;
+    top: 25px;
+    left:346px;
+    width: 538px;
+    height: 36px;
+    border: 2px solid #b1191a;
+}
+.search input { /* Input和button都属于行内块元素，中间会有一个缝隙。想去掉，就加浮动*/
+    float:left;
+    width: 455px;
+    height: 32px;
+    padding-left: 10px;
+}
+.search button {
+    float:left;
+    margin: -1px;
+    width: 80px;
+    height: 34px;
+    background-color:  #b1191a;
+    color:#f1f1f1;
+}
+.hotwords {
+    position: absolute;
+    top: 66px;
+    left: 346px;
+}
+.hotwords a {
+    margin: 0 10px;  /*上下0 左右10 */
+}
+.shopcar {
+    position: absolute;
+    top:25px;
+    right:60px;
+    width: 145px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border:1px solid #dfdfdf;
+    background-color: #f7f7f7;
+}
+.shopcar::before {
+    content: '\e93a';
+    font-family: 'icomoon';
+    margin-right: 5px;
+    color:#b1191a; /*字体图标也能改颜色，它其实是文字*/
+}
+.shopcar::after {
+    content:'\e920';
+    font-family: 'icomoon';
+    margin-left:5px;
+}
+.count {
+    position:absolute;
+    top: -5px;
+    /* 这儿用left比right好，这样里面的内容变多后盒子会往右边长大。 */
+    left: 105px;
+    /* 盒子不给宽，因为不确定里面内容有多长 */
+    height: 14px;
+    /*行高会继承，他的父亲shopcar设置了行高，这里用层叠性，重设一个行高 */
+    line-height: 14px; 
+    color:#fff;
+    background-color: #e60012;
+    /*上下0 左右5,这里padding能撑开盒子是因为加起来的宽度超过了本身盒子宽度*/
+    padding: 0 5px; 
+    /*盒子是圆角border-radius设为高度的一半，顺序左上右上右下左下 左下是直角*/
+    border-radius: 7px 7px 7px 0;
+}
+.nav {
+    /* 通栏的盒子不需要给宽，只给高 */
+    height: 47px;
+    border-bottom: 2px solid #b1191a;
+}
+    /*.dropdown和.navitems都是div 块级元素会上下来显示，想要一排显示就加浮动*/
+.nav .dropdown {
+    float:left;
+    width: 210px;
+    height: 46px;
+    background-color: #b1191a;
+}
+.nav .navitems {
+    float:left;
+}
+.dropdown .dt {
+    width: 100%;
+    height: 100%;
+    color:#fff;
+    text-align: center;
+    line-height: 46px;
+    font-size: 16px;
+}
+.dropdown .dd {
+    /* display: none;  */
+    width: 210px;
+    height: 465px;
+    background-color: #c81623;
+    margin-top: 1px;
+}
+.dropdown .dd ul li {
+    position: relative;
+    height: 31px;
+    line-height: 31px;
+    margin-left:2px;
+    padding-left: 10px;
+}
+.dropdown .dd ul li::after {
+    position: absolute; /*给伪元素加绝对定位，让它挪到右边去。父亲是li*/
+    top: 1px;
+    right: 10px;
+    font-size:14px;
+    content:'\e920';
+    font-family: 'icomoon';
+    color:#fff;
+}
+.dropdown .dd ul li:hover {
+    background-color: #fff;
+}
+.dropdown .dd ul li a {
+    font-size: 14px;
+    color:#fff;
+}
+.dropdown .dd ul li:hover a {
+    color:#c81623; /*鼠标经过Li，里面的a变颜色*/
+}
+.navitems ul li {
+    float:left;
+}
+.navitems ul li a {
+    /* a是行内元素，不能直接设置高度 */
+    display: block;
+    height: 45px;
+    line-height: 45px;
+    font-size: 16px;
+    padding: 0 25px;  /*上下0 左右25*/
+}
+/* 底部模块的搭建 */
+.footer {
+    height: 415px;
+    background-color: #f5f5f5;
+    padding-top: 30px;
+}
+.mod_service {
+    height: 80px;
+    border-bottom: 1px solid #ccc;
+}
+.mod_service ul li {
+    float: left;
+    width: 300px;
+    height: 50px;
+    padding-left: 35px;
+}
+.mod_service ul li h5{
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin-right: 8px;
+    /* 小图标在精灵图中的位置，X=252 Y=2 */
+    background: url(../images/icons.png) no-repeat -252px -2px; 
+}
+.service_txt h4 {
+    font-size: 14px;
+}
+.service_txt p {
+    font-size: 12px;
+}
+.mod_help {
+    height: 185px;
+    border-bottom: 1px solid #ccc;
+    padding-top: 20px;
+    padding-left: 50px;
+}
+.mod_help dl {
+    float:left;
+    width: 200px;
+}
+.mod_help dl:last-child {
+    width: 90px; /*把最后一个dl选出来。*/
+    text-align: center;
+}
+.mod_help dl dt {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.mod_copyright{
+    height: 200px;
+    margin: 15px auto;
+    text-align: center;
+}
+.mod_copyright ul {
+    padding-left: 65px;
+}
+.mod_copyright ul li {
+    float:left;
+}
+.mod_copyright ul li a {
+    display: inline-block;
+    height:15px;
+    padding:0 15px;
+    text-align: center;
+}
+.mod_copyright .copyright {
+    margin-top: 15px;
+    line-height: 20px;
+}

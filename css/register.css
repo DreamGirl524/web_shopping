@@ -1,0 +1,128 @@
+.w {
+    width: 1200px;
+    margin: 0 auto;
+}
+header {
+    height: 84px;
+    border-bottom: 2px solid #c81523;
+}
+.logo {
+    padding-top: 18px;
+}
+.registerarea {
+    height: 522px;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+}
+.registerarea h3 {
+    height: 42px;
+    border-bottom: 1px solid #ccc;
+    background-color: #ececec;
+    line-height: 42px;
+    padding: 0 10px;  /* 上下 左右*/
+    font-size: 18px;
+    font-weight: 400;
+}
+.login {
+    float: right;
+    font-size: 14px;
+}
+.login a {
+    color:#c81523;
+    text-decoration: underline;
+}
+.reg_form {
+    width: 600px;
+    margin: 50px auto 0;
+}
+.reg_form ul li {
+    margin-bottom: 20px;
+}
+.reg_form ul li label {
+    /* label为行内元素，转换为行内块元素，给宽度，然后让里面文字右对齐 */
+    display:inline-block;
+    width: 88px;
+    text-align: center;
+}
+.reg_form ul li input[type=text] {  /*属性选择器，选择属性是text的input表单*/
+    /* inut是行内块元素，可以直接设置宽高 */
+    width: 242px;
+    height: 37px;
+    border: 1px solid #ccc;
+}
+.error {
+    color:#c81523;
+}
+.error_icon    /* 逗号并集选择器*/
+,.success_icon{
+    /* i标签是行内元素，转换之后设置宽高，把小图片当背景图片 */
+    display:inline-block;
+    width: 20px;
+    height: 20px;
+    background: url('../images/error.png') no-repeat;
+    /* 让图片和文字对齐， */
+    vertical-align: middle;
+    margin-top: -2px;
+}
+.success {
+    color:green;
+}
+.success_icon {
+    background: url('../images/success.png') no-repeat;
+}
+.save{
+    padding-left: 170px;
+}
+.save em {
+    padding: 0 12px;
+    color:#fff
+}
+.ruo{
+    background-color: #de1111;
+}
+.zhong{
+    background-color: #f79100;
+}
+.qiang{
+    background-color: #40b83f;
+}
+.agree {
+    padding-left: 95px;
+}
+.agree input{
+    vertical-align:middle;  /* 让复选框checkbox和文字对齐。*/
+}
+.agree a {
+    color:#1ba1e6;
+}
+.btn {
+    width: 200px;
+    height: 34px;
+    background-color: #c81623;
+    font-size: 14px;
+    color: #fff;
+    margin:30px 0 0 70px; /*上 右 下 左*/ 
+}
+
+
+.mod_copyright{
+    height: 200px;
+    margin: 15px auto;
+    text-align: center;
+}
+.mod_copyright ul {
+    padding-left: 65px;
+}
+.mod_copyright ul li {
+    float:left;
+}
+.mod_copyright ul li a {
+    display: inline-block;
+    height:15px;
+    padding:0 15px;
+    text-align: center;
+}
+.mod_copyright .copyright {
+    margin-top: 15px;
+    line-height: 20px;
+}
